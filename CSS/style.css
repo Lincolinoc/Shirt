@@ -1,0 +1,228 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300&family=Roboto:wght@400;500;700&display=swap');* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+
+.product_photo {
+    margin: 25px;
+    width: 200px;
+    height: 600px;
+}
+
+.photo {
+    margin: 50px;
+    width: 100px;
+    height: 130px;
+    cursor: pointer;
+}
+
+#shirt{
+    background-image: url("../IMG/shirt.png");
+    background-repeat: no-repeat;
+    background-size: 90px 130px;
+}
+
+#shirt_people_1{
+    background-image: url("../IMG/shirt_people_1.jpg");
+    background-repeat: no-repeat;
+    background-size: 90px 130px;
+}
+
+#shirt_people_2{
+    background-image: url("../IMG/shirt_people_2.jpg");
+    background-repeat: no-repeat;
+    background-size: 90px 130px;
+}
+
+#zoom_shirt{
+    width: 600px;
+    height: 1000px;
+    margin: 80px 100px 40px 100px;
+    cursor: pointer;
+    background-repeat: no-repeat;
+    background-size: 400px 550px;
+}
+
+.product {
+    margin: 20px;
+    margin-left: auto;
+}
+
+.title {
+    margin-top: 40px;
+    font-family: 'Roboto Light', 'sans-serif';
+}
+
+.product_navigation {
+    width: 400px;
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.product_navigation a {
+    text-decoration: none;
+    font-family: 'Raleway', 'sans-serif';
+}
+
+.product_price {
+    width: 400px;
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Roboto', 'sans-serif';
+}
+
+.product_price-old {
+    margin-right: 10px;
+    opacity: 0.3;
+    text-decoration: line-through;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.product_price-new {
+    opacity: 0.5;
+    margin-right: 50px;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.product_price-promo-code {
+    font-size: 20px;
+}
+
+.product_info {
+    margin-top: 50px;
+    width: 400px;
+    background-color: #f4f4f4;
+    padding: 15px 0 15px 20px;
+    font-family: 'Roboto', 'sans-serif';
+}
+
+.product_info a{
+    text-decoration: none;
+}
+
+.product_quantity {
+    margin-left: 8px;
+    font-size: 0;
+    margin-top: 50px;
+}
+
+input{
+    width: 50px;
+    border: 0;
+}
+
+.product_quantity-total {
+    width: 110px;
+    padding: 8px;
+    background-color: #f4f4f4;
+    border-top: 1px #808080 solid;
+    border-bottom: 1px #808080 solid;
+    text-align: center;
+}
+
+.product_quantity-increase{
+    padding: 8px;
+    background-color: white;
+    border: 1px #808080 solid;
+}
+
+.product_quantity-decrease{
+    padding: 8px;
+    background-color: white;
+    border: 1px #808080 solid;
+}
+
+.product_actions {
+    width: 450px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.custom-button {
+    background-color: white;
+    /*margin-top: 50px;*/
+    width: 210px;
+    height: 50px;
+    border: black 1px solid;
+    font-weight: 600;
+}
+
+.custom-button--blue {
+    border: none;
+    color: white;
+    background-color: #006be5;
+}
+
+.product_text {
+    width: 500px;
+    font-family: 'Roboto Light', 'sans-serif';
+    margin-top: 50px;
+    opacity: 0.6;
+}
+
+.product_share {
+    width: 500px;
+    height: 200px;
+    margin-top: 60px;
+    font-family: 'Roboto Light', 'sans-serif';
+    opacity: 0.6;
+}
+
+.product_share-vk{
+    background-image: url("../IMG/VK.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 10px 10px;
+    border: 2px solid #ccc;
+    border-radius: 80px;
+    margin-left: 30px;
+    padding: 10px;
+
+}
+
+.product_share-google{
+    background-image: url("../IMG/google.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 10px 10px;
+    border: 2px solid #ccc;
+    border-radius: 40px;
+    margin-left: 15px;
+    padding: 10px;
+
+}
+.product_share-facebook{
+    background-image: url("../IMG/facebook.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 10px 10px;
+    border: 2px solid #ccc;
+    border-radius: 40px;
+    margin-left: 15px;
+    padding: 10px;
+
+}
+.product_share-twitter{
+    background-image: url("../IMG/twiter.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 10px 10px;
+    border: 2px solid #ccc;
+    border-radius: 40px;
+    margin-left: 15px;
+    padding: 10px;
+
+}
+

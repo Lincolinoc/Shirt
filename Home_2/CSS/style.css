@@ -1,14 +1,18 @@
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300&family=Roboto:wght@400;500;700&display=swap');* {
+* {
     padding: 0;
     margin: 0;
     border: 0;
     box-sizing: border-box;
 }
 
+a {
+    text-decoration: none;
+}
+
 .container {
     display: grid;
     grid-template-columns: auto auto auto;
+    font-family: 'Roboto', 'sans-serif';
 }
 
 .product_photo {
@@ -24,31 +28,21 @@
     cursor: pointer;
 }
 
-#shirt{
-    background-image: url("../IMG/shirt.png");
-    background-repeat: no-repeat;
-    background-size: 90px 130px;
-}
-
-#shirt_people_1{
-    background-image: url("../IMG/shirt_people_1.jpg");
-    background-repeat: no-repeat;
-    background-size: 90px 130px;
-}
-
-#shirt_people_2{
-    background-image: url("../IMG/shirt_people_2.jpg");
-    background-repeat: no-repeat;
-    background-size: 90px 130px;
+.photo_shirt {
+    max-width:100%;
+    height:auto;
 }
 
 #zoom_shirt{
-    width: 600px;
-    height: 1000px;
     margin: 80px 100px 40px 100px;
     cursor: pointer;
-    background-repeat: no-repeat;
-    background-size: 400px 550px;
+    display: block;
+}
+
+#zoom_photo {
+    width: 400px;
+    height: 500px;
+    display: block;
 }
 
 .product {
@@ -58,7 +52,6 @@
 
 .title {
     margin-top: 40px;
-    font-family: 'Roboto Light', 'sans-serif';
 }
 
 .product_navigation {
@@ -68,17 +61,11 @@
     justify-content: space-between;
 }
 
-.product_navigation a {
-    text-decoration: none;
-    font-family: 'Raleway', 'sans-serif';
-}
-
 .product_price {
     width: 400px;
     margin-top: 40px;
     display: flex;
     justify-content: space-between;
-    font-family: 'Roboto', 'sans-serif';
 }
 
 .product_price-old {
@@ -96,8 +83,16 @@
     font-weight: 500;
 }
 
+.product_price-new::after {
+    content: '₽';
+}
+
 .product_price-promo-code {
     font-size: 20px;
+}
+
+.price::after {
+    content: '₽';
 }
 
 .product_info {
@@ -105,11 +100,6 @@
     width: 400px;
     background-color: #f4f4f4;
     padding: 15px 0 15px 20px;
-    font-family: 'Roboto', 'sans-serif';
-}
-
-.product_info a{
-    text-decoration: none;
 }
 
 .product_quantity {
@@ -152,77 +142,65 @@ input{
 
 .custom-button {
     background-color: white;
-    /*margin-top: 50px;*/
     width: 210px;
     height: 50px;
     border: black 1px solid;
     font-weight: 600;
 }
 
+.custom-button:hover {
+    background-color: grey;
+    transition: 0.7s;
+    color: white;
+    cursor: pointer;
+}
+
 .custom-button--blue {
     border: none;
     color: white;
     background-color: #006be5;
+    cursor: pointer;
+}
+
+.custom-button--blue:hover{
+    background-color: white;
+    color: blue;
+    transition: 0.7s;
+    border: 1px blue solid;
 }
 
 .product_text {
     width: 500px;
-    font-family: 'Roboto Light', 'sans-serif';
     margin-top: 50px;
     opacity: 0.6;
 }
 
 .product_share {
-    width: 500px;
-    height: 200px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
     margin-top: 60px;
-    font-family: 'Roboto Light', 'sans-serif';
     opacity: 0.6;
 }
 
-.product_share-vk{
-    background-image: url("../IMG/VK.png");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: 10px 10px;
-    border: 2px solid #ccc;
-    border-radius: 80px;
-    margin-left: 30px;
-    padding: 10px;
-
+.product_share-social {
+    height: 40px;
+    width: 40px;
+    margin-right: 10px;
 }
 
-.product_share-google{
-    background-image: url("../IMG/google.png");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: 10px 10px;
-    border: 2px solid #ccc;
-    border-radius: 40px;
-    margin-left: 15px;
+.product_share-quantity {
+    background-color: #efefef;
+    margin-left: 25px;
     padding: 10px;
-
-}
-.product_share-facebook{
-    background-image: url("../IMG/facebook.png");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: 10px 10px;
-    border: 2px solid #ccc;
-    border-radius: 40px;
-    margin-left: 15px;
-    padding: 10px;
-
-}
-.product_share-twitter{
-    background-image: url("../IMG/twiter.png");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: 10px 10px;
-    border: 2px solid #ccc;
-    border-radius: 40px;
-    margin-left: 15px;
-    padding: 10px;
-
+    position: relative;
 }
 
+.product_share-quantity::before {
+    content: '';
+    position: absolute;
+    border: 5px solid transparent;
+    border-right: 10px solid #efefef;
+    right: 44px;
+    bottom: 15px;
+}

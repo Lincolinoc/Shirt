@@ -44,7 +44,7 @@ INSERT INTO `product` (`id`, `category_sections_id`, `name` ,`preview_img`, `img
 CREATE TABLE `product_category` (
   `id` int(11) NOT NULL,
   `parent_product_id` int(11) DEFAULT NULL,
-  `name` varchar(255) NOT NULL,
+  `name_category` varchar(255) NOT NULL,
   `count` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -52,7 +52,7 @@ CREATE TABLE `product_category` (
 -- Дамп данных таблицы `product_category`
 --
 
-INSERT INTO `product_category` (`id`, `parent_product_id`, `name`, `count`) VALUES
+INSERT INTO `product_category` (`id`, `parent_product_id`, `name_category`, `count`) VALUES
 (1, NULL, 'Мужская одежда', 4047),
 (2, 1,'Верхняя одежда', 1560),
 (3, 1, 'Брюки', 770),
@@ -98,7 +98,7 @@ ALTER TABLE `product`
 --
 -- Индексы таблицы `product_category`
 --
-ALTER TABLE `good_category`
+ALTER TABLE `product_category`
   ADD PRIMARY KEY (`id`),
   ADD KEY `parent_product_id` (`parent_product_id`);
 -- AUTO_INCREMENT для сохранённых таблиц

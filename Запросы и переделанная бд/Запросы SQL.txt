@@ -1,0 +1,23 @@
+Получение всех категорий с активными товарами: SELECT c.id_catalog_product, c.product, COUNT(cp.id_cat_prod) as active_product
+FROM `category` AS c
+JOIN `category_product` AS cp ON c.id_catalog_product = cp.id_cat_prod
+JOIN `product` AS p ON cp.id_product = p.id_product
+WHERE p.count_product > 0
+GROUP BY c.id_catalog_product
+
+Получение активных товаров в категории: SELECT cp.id_cat_prod, p.name_product, cp.title_category, cp.product_pictures_preview, p.id_product
+FROM category_product AS cp
+JOIN product as p ON cp.id_product = p.id_product
+WHERE cp.id_cat_prod = {$category_id} and p.count_product > 0
+
+Информация о товаре: SELECT p.name_product, p.price_product, p.discount_price_product, p.price_promo_product, p.description 
+                FROM `product` AS p
+                WHERE id_product = {$product_id}
+Получение изображений товара: SELECT pic.link_detail_image, pic.link_pictures_preview
+                FROM `picture` AS pic
+            WHERE pic.id_pictures IN 
+                  (
+                    SELECT p_i.id_image 
+                        FROM product_image AS p_i 
+                    WHERE p_i.id_product = {$product_id}
+                    )
